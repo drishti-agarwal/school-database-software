@@ -16,7 +16,7 @@ school_name=Label(mainwindow,text='PURE VISION INTERNATIONAL SCHOOL',relief=SOLI
          bg='black',bd=10,fg='white',font=('Times new roman',30,'bold')).place(x=300,y=0)
 intro_heading=Label(mainwindow,text='ABOUT THE SCHOOL',
          bg='purple',bd=10,fg='orange',font=('Times new roman',20,'bold')).place(x=0,y=100)
-introduction=Label(mainwindow,text='Pure vision is committed to fostering excellence '
+introduction=Label(mainwindow,text='The Pure vision is committed to fostering excellence '
                                    'in education.We firmly believe that teaching is'
                                    ' not about knowledge downloads, but opening '
                                    'the minds\nof young learners.'
