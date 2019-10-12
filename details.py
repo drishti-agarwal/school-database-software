@@ -14,7 +14,7 @@ def link2():
     wallpaper.image=background
     wallpaper.place(x=0,y=0)
 
-    school_name=Label(details,text='PURE VISION INTERNATIONAL SCHOOL',relief=SOLID,
+    school_name=Label(details,text='THE PURE VISION INTERNATIONAL SCHOOL',relief=SOLID,
       bg='black',bd=10,fg='white',font=('Times new roman',30,'bold')).place(x=300,y=0)
 
     heading=Label(details,text='REGISTRATION FORM',bg='purple',bd=10,fg='orange',
