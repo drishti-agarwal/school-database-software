@@ -2,13 +2,18 @@
 from tkinter import*
 from PIL import ImageTk,Image
 from tkinter import messagebox
+import pymysql
+mydb = pymysql.connect(host='localhost', user='root', password='root')
+cur = mydb.cursor()
 def link():
     register=Toplevel()
     register.geometry('600x600')
 
-    path=r'F:\wallpaper-3.jpg'
+    path=r'D:\drishti\finalproject(schooldatabase)\wallpaper-3.jpg'
     background=ImageTk.PhotoImage(Image.open(path))
-    #labels
+
+    ###################################labels###################################################
+
     wallpaper=Label(register,image=background,height=2000,width=2000)
     wallpaper.image=background
     wallpaper.place(x=0,y=0)
@@ -48,10 +53,8 @@ def link():
     bloodgroup=Label(register,text="BLOOD GROUP:",bg='orange',bd=10,fg='white',
                        font=('Times new roman',15,'bold')).place(x=900,y=600)
 
+    ###########################entry boxes########################################
 
-
-
-    #entry boxes
     stu_name=Entry(register,width=40)
     stu_name.config(font=10,bd=5)
     stu_name.place(x=301,y=205)
@@ -82,13 +85,14 @@ def link():
     date_.config(font=10,bd=5)
     date_.place(x=1080,y=405)
 
-    #drop down menu
+    ################################### drop down menu  ###############################################
+
     standard=IntVar()
     choices={1,2,3,4,5,6,7,8,9,10,11,12}
     standard.set('please select')
-    cls=OptionMenu(register,standard,*choices)
-    cls.config(fg='white',bg='purple',relief=SOLID,font=('arial',13,'bold'))
-    cls.place(x=1000,y=505)
+    Cls=OptionMenu(register,standard,*choices)
+    Cls.config(fg='white',bg='purple',relief=SOLID,font=('arial',13,'bold'))
+    Cls.place(x=1000,y=505)
 
     blood_grp=StringVar()
     choice={'A-','A+','B-','B+','AB-','AB+','O-','O+'}
@@ -97,21 +101,41 @@ def link():
     bld_grp.config(fg='white',bg='purple',relief=SOLID,font=('arial',13,'bold'))
     bld_grp.place(x=1090,y=603)
 
-    #radiobuttons
+    ####################################### radiobuttons ####################################################
     v=IntVar()
     female=Radiobutton(register,text='FEMALE',variable=v,relief=SUNKEN,font=('arial',15,'bold'),value=1).place(x=250,y=505)
 
     male=Radiobutton(register,text='MALE',variable=v,relief=SUNKEN,font=('arial',15,'bold'),value=2).place(x=400,y=505)
 
-    #function
+     ###################################### retrieve data ####################################################
+    def Database():
+        name=stu_name.get()
+        f_name=dad_name.get()
+        m_name=mom_name.get()
+        gender=v.get()
+        phone=phone_no.get()
+        mail=emailid.get()
+        age=age_box.get()
+        date=date_.get()
+        Class=standard.get()
+        Bp=blood_grp.get()
 
-    def button():
+        mydb = pymysql.connect(host='localhost', user='root', password='root')
+        cur = mydb.cursor()
+        cur.execute('create database if not exists school')
+        cur.execute('create table if not exists school.student (name varchar(255), f_name varchar(255), m_name varchar(255), gender varchar(20), phone int(10), mail varchar(255), age int(100), date varchar(100), class int(5), Bp varchar(10))')
+        cur.execute('insert into school.student (name, f_name, m_name, gender,  phone, mail, age, date, class, Bp) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',(name, f_name, m_name, gender, phone, mail, age, date, Class, Bp))
+        mydb.commit()      
         messagebox.showinfo(title='thank you', message='DETAILS RECIEVED')
         register.destroy()
 
+        
+    ######################################## buttons ##########################################################
 
-    #BUTTONS
     submit=Button(register,text="SUBMIT",bg='purple',bd=10,fg='white',
-                       font=('Times new roman',20,'bold'),command=button).place(x=600,y=630)
+                       font=('Times new roman',20,'bold'),command=Database).place(x=600,y=630)
+
+   
+
 
     register.mainloop()

@@ -5,7 +5,7 @@ import details
 mainwindow=Tk()
 mainwindow.geometry('600x600')
 
-path=r'F:\wallpaper-3.jpg'
+path=r'D:\wallpaper-3.jpg'
 background=ImageTk.PhotoImage(Image.open(path))
 
 #labels
