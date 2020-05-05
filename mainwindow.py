@@ -18,7 +18,7 @@ intro_heading=Label(mainwindow,text='ABOUT THE SCHOOL',
          bg='purple',bd=10,fg='orange',font=('Times new roman',20,'bold')).place(x=0,y=100)
 introduction=Label(mainwindow,text='The Pure vision is committed to fostering excellence '
                                    'in education.We firmly believe that teaching is'
-                                   ' not about knowledge,but opening '
+                                   ' not about knowledge, but opening '
                                    
                                    'the minds\nof young learners.'
                                    'We guide them towards learning, comprehensively '
