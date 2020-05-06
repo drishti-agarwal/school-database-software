@@ -120,7 +120,7 @@ def link2():
         # ------------------Labels---------------------------
         name = Label(details_r, text=s_name, bg='orange',bd=10,fg='white',
                        font=('Times new roman',15,'bold'))
-        name.place(x=301,y=205)
+        name.place(x=301,y=200)
         fname = Label(details_r, text=f_name, bg='orange',bd=10,fg='white',
                        font=('Times new roman',15,'bold'))
         fname.place(x=300,y=305)
@@ -145,6 +145,9 @@ def link2():
         bldgrp= Label(details_r, text=s_bp, bg='orange',bd=10,fg='white',
                        font=('Times new roman',15,'bold'))
         bldgrp.place(x=1090,y=603)
+        gnd= Label(details_r, text=s_gender, bg='orange',bd=10,fg='white',
+                       font=('Times new roman',15,'bold'))
+        gnd.place(x=250,y=505)
         
       
 
