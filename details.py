@@ -119,35 +119,35 @@ def link2():
         s_bp = cur.fetchone()
         # ------------------Labels---------------------------
         name = Label(details_r, text=s_name,bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
+                       font=('Times new roman',15,'bold'))
         name.place(x=301,y=200)
         fname = Label(details_r, text=f_name, bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
-        fname.place(x=300,y=305)
+                       font=('Times new roman',15,'bold'))
+        fname.place(x=297,y=300)
         mname = Label(details_r, text=m_name, bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
-        mname.place(x=300,y=405)
+                       font=('Times new roman',15,'bold'))
+        mname.place(x=301,y=400)
         phn= Label(details_r, text=s_mail, bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
-        phn.place(x=1070,y=305)
+                       font=('Times new roman',15,'bold'))
+        phn.place(x=1070,y=300)
         e_mail= Label(details_r, text=s_phone, bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
-        e_mail.place(x=780, y=250)
+                       font=('Times new roman',15,'bold'))
+        e_mail.place(x=1020,y=200)
         Age = Label(details_r, text=s_age, bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
-        Age.place(x=180,y=605)
-        DOB = Label(details_r, text=s_date, bd=10,fg='white',
-                       font=('Times new roman',20,'bold'))
-        DOB.place(x=1080,y=405)
-        Cls= Label(details_r, text=s_class, bd=10,fg='white',
-                       font=('Times new roman',20,'bold'))
-        Cls.place(x=1000,y=505)
+                       font=('Times new roman',15,'bold'))
+        Age.place(x=178,y=600)
+        DOB = Label(details_r, text=s_date, bd=10,fg='black',
+                       font=('Times new roman',15,'bold'))
+        DOB.place(x=1080,y=400)
+        Cls= Label(details_r, text=s_class, bd=10,fg='black',
+                       font=('Times new roman',15,'bold'))
+        Cls.place(x=1000,y=500)
         bldgrp= Label(details_r, text=s_bp, bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
-        bldgrp.place(x=1090,y=603)
+                       font=('Times new roman',15,'bold'))
+        bldgrp.place(x=1090,y=600)
         gnd= Label(details_r, text=s_gender, bd=10,fg='black',
-                       font=('Times new roman',20,'bold'))
-        gnd.place(x=250,y=505)
+                       font=('Times new roman',15,'bold'))
+        gnd.place(x=210,y=500)
         
       
 
